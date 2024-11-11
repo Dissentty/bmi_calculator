@@ -47,7 +47,6 @@ class MainWindow(QMainWindow):
         widget.setLayout(layout_3)
         self.setCentralWidget(widget)
 
-    # Метод для расчета BMI
     def calculate_bmi(self):
         try:
             mass = float(self.line_edit_mass.text())
@@ -56,7 +55,6 @@ class MainWindow(QMainWindow):
             bmi_value = mass / (height_m ** 2)
             self.bmi.setText(f"{bmi_value:.2f}")
 
-            # Определяем категорию BMI
             if bmi_value < 18.5:
                 self.bmi_state.setText("Underweight")
             elif 18.5 <= bmi_value < 24.9:
@@ -74,9 +72,3 @@ window = MainWindow()
 window.show()
 
 app.exec()
-
-"""print("Введите вашу массу тела")
-mass = int(input())
-print("Введите ваш рост в см")
-cm = int(input())
-print(f"Ваш bmi = {round(mass/(cm/100)**2, 2)}")"""
